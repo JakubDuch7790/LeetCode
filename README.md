@@ -1,0 +1,1 @@
+This repository serves as proof of my coding consistency for potentional job giver. I assume that there is a chance you will check my github activity in future so at least on commit every day can really better your view on my github activity.
