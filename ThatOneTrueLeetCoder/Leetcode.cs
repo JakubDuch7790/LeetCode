@@ -1745,6 +1745,24 @@ public class Leetcode
         return lucky;
     }
 
+    // LinkedIN Learning excercise
+    // Input: [1, 2, 3, 4, 5, 6]
+    // Output: [2, 3, 4, 5, 6, 1]
+
+    public int[] RotateArray(int[] numbers)
+    {
+        int first = numbers[0];
+
+        for(int i = 0; i < numbers.Length - 1; i++)
+        {
+            numbers[i] = numbers[i + 1];
+        }
+
+        numbers[numbers.Length - 1] = first;
+
+        return numbers;
+    }
+
     #endregion
 }
 

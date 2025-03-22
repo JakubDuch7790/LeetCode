@@ -8,6 +8,8 @@ class Program
     {
         Leetcode leetcode = new Leetcode();
 
+        leetcode.RotateArray([1, 2, 3, 4, 5, 6]);
+
         leetcode.FindLucky2([2, 2, 3, 4, 4, 4, 4, 5, 5, 5, 5]);
 
         leetcode.FindMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]);
