@@ -1685,6 +1685,66 @@ public class Leetcode
         return resultCount;
     }
 
+    // 1394. Find Lucky Integer in an Array
+    // Input: arr = [2,2,3,4]
+    // Output: 2
+
+    //Beats 9%
+    public int FindLucky(int[] arr)
+    {
+        int lucky = -1;
+
+        var dict = arr.GroupBy(x => x).ToDictionary(x => x.Key, x => x.Count());
+
+        foreach (var kvp in dict)
+        {
+            if (kvp.Key == kvp.Value)
+            {
+                var potentionalLucky = kvp.Key;
+
+                if (lucky < potentionalLucky)
+                {
+                    lucky = kvp.Key;
+                }
+            }
+        }
+
+        return lucky;
+    }
+
+    // Input: arr = [2,2,3,4,4,4,4]
+
+    // Beats 83%
+    public int FindLucky2(int[] arr)
+    {
+        int lucky = -1;
+
+        var dict = new Dictionary<int, int>();
+
+        foreach(var num in arr)
+        {
+            if(!dict.TryAdd(num, 1))
+            {
+                dict[num]++;
+            }
+        }
+
+        foreach (var kvp in dict)
+        {
+            if (kvp.Key == kvp.Value)
+            {
+                var potentionalLucky = kvp.Key;
+
+                if (lucky < potentionalLucky)
+                {
+                    lucky = kvp.Key;
+                }
+            }
+        }
+
+        return lucky;
+    }
+
     #endregion
 }
 
