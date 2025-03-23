@@ -1764,6 +1764,46 @@ public class Leetcode
     }
 
     #endregion
+
+    #region 23.3.2025
+
+    // 1470. Shuffle the Array
+    // Input: nums = [2,5,1,3,4,7], n = 3
+    // Output: [2, 3, 5, 4, 1, 7]
+
+    //public int[] Shuffle(int[] nums, int n)
+    //{
+    //    for(int i = 0; i < nums.Length; i++)
+    //    {
+
+    //    }
+    //}
+
+    // 2706. Buy Two Chocolates
+    // Input: prices = [1, 2, 2], money = 3
+    // Output: 0
+    public int BuyChoco(int[] prices, int money)
+    {
+        int actualMoneyCount = money;
+
+        Array.Sort(prices);
+
+        for(int i = 0; i < 2; i++)
+        {
+            actualMoneyCount -= prices[i];
+        }
+
+        if(actualMoneyCount >= 0)
+        {
+            return actualMoneyCount;
+        }
+        else
+        {
+            return money;
+        }
+    }
+
+    #endregion
 }
 
 
