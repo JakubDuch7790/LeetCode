@@ -8,6 +8,10 @@ class Program
     {
         Leetcode leetcode = new Leetcode();
 
+        leetcode.Merge([[1, 4], [0, 2], [3, 5]]);
+        leetcode.Merge([[1, 3], [0, 2], [2, 6], [8, 10], [5, 12], [15, 18]]);
+        leetcode.Merge([[1, 3], [2, 6], [8, 10], [15, 18]]);
+
         leetcode.BuyChoco([1, 2, 2], 3);
 
         leetcode.RotateArray([1, 2, 3, 4, 5, 6]);

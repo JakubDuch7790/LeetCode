@@ -1803,6 +1803,84 @@ public class Leetcode
         }
     }
 
+    // 495. Teemo Attacking
+    // Input: timeSeries = [1, 4], duration = 2
+    // Output: 4
+    //  [t, t + duration - 1]
+    //public int FindPoisonedDuration(int[] timeSeries, int duration)
+    //{
+    //    int secondsUnderAttack = 0;
+
+    //    for(int i = 0; i < timeSeries.Length; i++)
+    //    {
+    //        if (timeSeries[i] - timeSeries[i + 1] < duration)
+    //        {
+
+    //        }
+    //    }
+
+    //}
+
+    #endregion
+
+    #region 24.3.2025
+
+    // 56. Merge Intervals
+    // Medium, Beats 39%, 51%
+    // Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
+    // Output: [[1, 6],[8, 10],[15, 18]]
+
+    //[[1,4],[0,4]]
+    //[[0,4]]
+
+    //[[1,4],[0,2],[3,5]] -- [0, 2], [1, 4], [3, 5]
+    //[[0,5]]
+    public int[][] Merge(int[][] intervals)
+    {
+        if (intervals.Count() <= 1)
+        {
+            return intervals;
+        }
+        List<int[]> result = new List<int[]>();
+
+        Array.Sort(intervals, (a, b) => a[0].CompareTo(b[0]));
+
+        var current = intervals[0];
+
+        for(int i = 1; i < intervals.Length; i++)
+        {
+
+            if (intervals[i][0] <= current[1])
+            {
+                if(result.Count > 0)
+                {
+                    result.Remove(result.LastOrDefault());
+                    result.Add([int.Min(current[0], intervals[i][0]), int.Max(current[1], intervals[i][1])]);
+                }
+                else
+                {
+                    result.Add([int.Min(current[0], intervals[i][0]), int.Max(current[1], intervals[i][1])]);
+                }
+            }
+            else 
+            { 
+                if(result.Count == 0)
+                {
+                    result.Add(intervals[i - 1]);
+                    result.Add(intervals[i]);
+                }
+                else
+                {
+                    result.Add(intervals[i]);
+                }
+            }
+
+            current = result.LastOrDefault();
+        }
+
+        return result.ToArray();
+    }
+
     #endregion
 }
 
