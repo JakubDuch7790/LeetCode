@@ -8,6 +8,9 @@ class Program
     {
         Leetcode leetcode = new Leetcode();
 
+        leetcode.FindPoisonedDuration([1, 2], 2);
+        leetcode.FindPoisonedDuration([1, 4], 2);
+
         leetcode.Merge([[1, 4], [0, 2], [3, 5]]);
         leetcode.Merge([[1, 3], [0, 2], [2, 6], [8, 10], [5, 12], [15, 18]]);
         leetcode.Merge([[1, 3], [2, 6], [8, 10], [15, 18]]);
