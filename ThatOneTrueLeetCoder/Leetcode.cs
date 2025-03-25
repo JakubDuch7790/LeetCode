@@ -1926,6 +1926,45 @@ public class Leetcode
     }
 
     #endregion
+
+    #region 25.3.2025
+
+    // 414. Third Maximum Number
+    // Input: nums = [2,2,3,1]
+    // Output: 1
+
+    //[1,2,2,5,3,5]
+    //[2]
+    public int ThirdMax(int[] nums)
+    {
+        Array.Sort(nums);
+        Array.Reverse(nums);
+
+        int countDistinct = 1;
+        int currentDistinct = nums[0];
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == currentDistinct)
+            {
+                continue;
+            }
+            else
+            {
+                currentDistinct = nums[i];
+                countDistinct++;
+            }
+
+            if (countDistinct == 3)
+            {
+                return nums[i];
+            }
+        }
+
+        return nums.Max();
+    }
+
+    #endregion
 }
 
 

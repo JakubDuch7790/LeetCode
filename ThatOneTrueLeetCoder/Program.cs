@@ -8,6 +8,9 @@ class Program
     {
         Leetcode leetcode = new Leetcode();
 
+        leetcode.ThirdMax([1, 2, 2, 5, 3, 5]);
+        leetcode.ThirdMax([2, 2, 3, 1]);
+
         leetcode.FindPoisonedDuration([1, 2], 2);
         leetcode.FindPoisonedDuration([1, 4], 2);
 
