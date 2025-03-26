@@ -8,6 +8,18 @@ class Program
     {
         Leetcode leetcode = new Leetcode();
 
+        ListNode n6 = new(6);
+        ListNode n5 = new(5, n6);
+        ListNode n4 = new(4, n5);
+        ListNode n3 = new(3, n4);
+        ListNode n2 = new(2, n3);
+        ListNode n1 = new(1, n2);
+
+        leetcode.Sum(n1);
+        leetcode.ReverseList(n1);
+
+        //leetcode.ShortestCompletingWord("1s3 PSt", ["step", "steps", "stripe", "stepple"]);
+
         leetcode.ThirdMax([1, 2, 2, 5, 3, 5]);
         leetcode.ThirdMax([2, 2, 3, 1]);
 

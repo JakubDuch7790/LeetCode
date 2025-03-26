@@ -1899,6 +1899,7 @@ public class Leetcode
                 if(result.Count > 0)
                 {
                     result.Remove(result.LastOrDefault());
+
                     result.Add([int.Min(current[0], intervals[i][0]), int.Max(current[1], intervals[i][1])]);
                 }
                 else
@@ -1935,6 +1936,7 @@ public class Leetcode
 
     //[1,2,2,5,3,5]
     //[2]
+
     public int ThirdMax(int[] nums)
     {
         Array.Sort(nums);
@@ -1963,6 +1965,94 @@ public class Leetcode
 
         return nums.Max();
     }
+
+    // 748. Shortest Completing Word
+    // Input: licensePlate = "1s3 PSt", words = ["step","steps","stripe","stepple"]
+    // Output: "steps"
+    //public string ShortestCompletingWord(string licensePlate, string[] words)
+    //{
+    //    var dict = new Dictionary<char, int>();
+
+    //    var lP = licensePlate.ToLower();
+
+    //    foreach(var ch in lP)
+    //    {
+    //        if (char.IsLetter(ch))
+    //        {
+    //            if(!dict.TryAdd(ch, 1))
+    //            {
+    //                dict[ch]++;
+    //            }
+    //        }
+    //    }
+
+
+    //    foreach(var word in words)
+    //    {
+
+    //    }
+
+    //    return words[0];
+    //}
+
+
+    #endregion
+
+    #region 26.3.2025
+
+    // 206. Reverse Linked List
+    // Input: head = [1,2,3,4,5]
+
+    /*
+     * [1,2,3,4,5]
+     * [2,3,4,5, 1]
+     * 
+     * 
+     */
+    // Output: [5, 4, 3, 2, 1]
+
+    public ListNode ReverseList(ListNode head)
+    {
+        int count = 0;
+
+        if (head == null)
+        {
+            return null;
+        }
+
+        var curr = head;
+
+        while(curr != null && curr.next != null)
+        {
+            count++;
+            curr = curr.next;
+
+            if(curr.next == null)
+            {
+                curr.next = head;
+                head.next = null;
+            }
+        }
+
+        return curr;
+    }
+
+    //LinkedIN question
+    public int Sum(ListNode head)
+    {
+        int counter = 0;
+
+        var curr = head;
+
+        while(curr != null)
+        {
+            counter += curr.val;
+
+            curr = curr.next;
+        }
+        return counter;
+    }
+
 
     #endregion
 }
