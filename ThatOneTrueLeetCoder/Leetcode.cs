@@ -2002,39 +2002,49 @@ public class Leetcode
 
     // 206. Reverse Linked List
     // Input: head = [1,2,3,4,5]
-
-    /*
-     * [1,2,3,4,5]
-     * [2,3,4,5, 1]
-     * 
-     * 
-     */
     // Output: [5, 4, 3, 2, 1]
 
     public ListNode ReverseList(ListNode head)
     {
-        int count = 0;
-
         if (head == null)
         {
             return null;
         }
 
+        bool newHeadSetted = false;
+
+        var newHead = head;
+        var curr2 = head;
         var curr = head;
 
-        while(curr != null && curr.next != null)
+        while (head.next != null)
         {
-            count++;
-            curr = curr.next;
-
-            if(curr.next == null)
+            if (curr.next.next == null)
             {
-                curr.next = head;
-                head.next = null;
+                if (!newHeadSetted)
+                {
+                    newHead = curr.next;
+                    newHeadSetted = true;
+
+                    curr2 = curr.next;
+                    curr2.next = curr;
+                    curr.next = null;
+                    curr = head;
+                }
+                else
+                {
+                    curr2 = curr.next;
+                    curr2.next = curr;
+                    curr.next = null;
+                    curr = head;
+                }
+            }
+            else
+            {
+                curr = curr.next;
             }
         }
-
-        return curr;
+        return newHead;
     }
 
     //LinkedIN question

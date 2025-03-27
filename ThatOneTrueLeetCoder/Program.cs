@@ -8,8 +8,7 @@ class Program
     {
         Leetcode leetcode = new Leetcode();
 
-        ListNode n6 = new(6);
-        ListNode n5 = new(5, n6);
+        ListNode n5 = new(5);
         ListNode n4 = new(4, n5);
         ListNode n3 = new(3, n4);
         ListNode n2 = new(2, n3);
