@@ -2158,6 +2158,39 @@ public class LeetcodeKnowledge
         return curr;
     }
 
+    // 1290. Convert Binary Number in a Linked List to Integer
+    // Easy, Beats 30%, 7%
+    // Input: head = [1,0,1]
+    // Output: 5
+
+    public int GetDecimalValue(ListNode head)
+    {
+        var curr = head;
+        StringBuilder sb = new();
+
+        while(curr != null)
+        {
+            sb.Append(curr.val);
+
+            curr = curr.next;
+        }
+
+        return Convert.ToInt32(sb.ToString(), 2);
+    }
+
+    // 21. Merge Two Sorted Lists
+
+    // Input: list1 = [1,2,4], list2 = [1,3,4]
+    // Output: [1, 1, 2, 3, 4, 4]
+
+    public ListNode MergeTwoLists(ListNode list1, ListNode list2)
+    {
+        var curr1 = list1;
+        var curr2 = list2;
+
+
+    }
+
     #endregion
 }
 
