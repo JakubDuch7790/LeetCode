@@ -1,8 +1,9 @@
 ﻿using System.Collections.Immutable;
+using System.Reflection;
 using System.Text;
 
 namespace ConsoleApp1;
-public class Leetcode
+public class LeetcodeKnowledge
 {
     #region HashTable
     public bool CanConstruct(string ransomNote, string magazine)
@@ -2063,6 +2064,99 @@ public class Leetcode
         return counter;
     }
 
+
+    #endregion
+
+    #region 27.3.2025
+
+    // 203. Remove Linked List Elements
+    // Input: head = [7,7,7,7], val = 7
+    // Output: []
+
+    //Unfinished
+    public ListNode RemoveElements(ListNode head, int val)
+    {
+        if (head == null)
+        {
+            return null;
+        }
+
+        if (head.next == null)
+        {
+            if(head.val == val)
+            {
+                return null;
+            }
+            else
+            {
+                return head;
+            }
+        }
+
+        var curr = head;
+
+        while (curr != null)
+        {
+            if(head.val == val)
+            {
+                head = head.next;
+                curr = head;
+                continue;
+            }
+
+            if (curr.next.val == val)
+            {
+                if (curr.next.next == null)
+                {
+                    curr.next = null;
+                    return head;
+                }
+                else
+                {
+                    curr.next = curr.next.next;
+                }
+            }
+
+            curr = curr.next;
+        }
+
+        return head;
+    }
+
+    #endregion
+
+    #region 29.3.2025
+
+    // 876. Middle of the Linked List
+    // Easy, Beats 100%, 60%
+    // Input: head = [1,2,3,4,5]
+    // Output: [3, 4, 5]
+    public ListNode MiddleNode(ListNode head)
+    {
+        int nodeCount = 0;
+        int midNode = 0;
+        var curr = head;
+        var mid = curr;
+
+        while(curr != null)
+        {
+            nodeCount++;
+
+            curr = curr.next;
+        }
+
+        midNode = (nodeCount / 2);
+        curr = head;
+
+        while(midNode != 0)
+        {
+            midNode--;
+
+            curr = curr.next;
+        }
+
+        return curr;
+    }
 
     #endregion
 }
