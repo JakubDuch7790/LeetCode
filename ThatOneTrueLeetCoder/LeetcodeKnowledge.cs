@@ -2178,17 +2178,72 @@ public class LeetcodeKnowledge
         return Convert.ToInt32(sb.ToString(), 2);
     }
 
+    #endregion
+
+    #region 30.3.2025
+
     // 21. Merge Two Sorted Lists
 
     // Input: list1 = [1,2,4], list2 = [1,3,4]
     // Output: [1, 1, 2, 3, 4, 4]
 
+    //Unfinished
     public ListNode MergeTwoLists(ListNode list1, ListNode list2)
     {
+        if(list1 == null && list2 == null)
+        {
+            return null;
+        }
+        else if(list1 == null)
+        {
+            return list2;
+        }
+        else if(list2 == null)
+        {
+            return list1;
+        }
+
         var curr1 = list1;
         var curr2 = list2;
 
+        return list2;
+    }
 
+    // 387. First Unique Character in a String
+
+    // Easy Beats 22%, 14% - optimization needed
+    // Input: s = "loveleetcode"
+    // Output: 2
+
+    public int FirstUniqChar(string s)
+    {
+        if (string.IsNullOrEmpty(s))
+        {
+            return -1;
+        }
+
+        Queue<char> chars = new();
+
+        //var dict = s.GroupBy(x => x).ToDictionary(x => x.Key, x => x.Count());
+        var dict = new Dictionary<char, int>();
+
+        foreach(var ch in s)
+        {
+            if (!dict.TryAdd(ch, 1))
+            {
+                dict[ch]++;
+            }
+        }
+
+        foreach(var kvp in dict)
+        {
+            if(kvp.Value == 1)
+            {
+                chars.Enqueue(kvp.Key);
+            }
+        }
+
+        return s.IndexOf(chars.FirstOrDefault());
     }
 
     #endregion

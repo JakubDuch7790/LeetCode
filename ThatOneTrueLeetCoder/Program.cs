@@ -8,8 +8,15 @@ class Program
     {
         LeetcodeKnowledge leetcode = new LeetcodeKnowledge();
 
-        ListNode n12 = new(1);
-        ListNode n11 = new(1, n12);
+        leetcode.FirstUniqChar("loveleetcode");
+
+        ListNode nn13 = new(4);
+        ListNode nn11 = new(3, nn13);
+        ListNode nn12 = new(1, nn11);
+
+        ListNode nn02 = new(2);
+        ListNode nn01 = new(2, nn02);
+        ListNode nn0 = new(1, nn01);
 
         //ListNode n03 = new(7);
         ListNode n02 = new(7);
@@ -23,11 +30,15 @@ class Program
         ListNode n2 = new(2, n3);
         ListNode n1 = new(1, n2);
 
-        leetcode.MiddleNode(n00);
+        leetcode.MergeTwoLists(nn0, nn12);
 
+        leetcode.MiddleNode(n00);
         leetcode.MiddleNode(n1);
-        leetcode.RemoveElements(n11, 2);
+
+        leetcode.RemoveElements(n1, 2);
+
         leetcode.Sum(n1);
+
         leetcode.ReverseList(n1);
 
         //leetcode.ShortestCompletingWord("1s3 PSt", ["step", "steps", "stripe", "stepple"]);
