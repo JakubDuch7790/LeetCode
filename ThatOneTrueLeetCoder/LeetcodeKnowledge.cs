@@ -2246,6 +2246,45 @@ public class LeetcodeKnowledge
         return s.IndexOf(chars.FirstOrDefault());
     }
 
+    // 2053. Kth Distinct String in an Array
+
+    public string KthDistinct(string[] arr, int k)
+    {
+        var dict = new Dictionary<string, int>();
+
+        for(int i = 0; i < arr.Length; i++)
+        {
+            if (!dict.TryAdd(arr[i], i + 1))
+            {
+                continue;
+            }
+        }
+        
+        foreach(var kvp in dict)
+        {
+            if(kvp.Value == k)
+            {
+                return kvp.Key;
+            }
+        }
+        return string.Empty;
+    }
+
+    // 917. Reverse Only Letters
+
+    // Input: s = "ab-cd"
+    // Output: "dc-ba"
+
+    public string ReverseOnlyLetters(string s)
+    {
+        for(int i = 0; i < s.Length; i++)
+        {
+            if (char.IsLetter(s[i]))
+            {
+                var temp = s[i];
+            }
+        }
+    }
     #endregion
 }
 
